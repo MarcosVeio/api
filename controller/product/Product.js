@@ -22,4 +22,8 @@ route.delete("/product/:id", (req, res) => {
   return res.json(res.status);
 });
 
-export { route };
+route.get("/product/:id", (req, res) => {
+  return res.json(products.getProductById(req.params.id));
+});
+
+export { route, products };
